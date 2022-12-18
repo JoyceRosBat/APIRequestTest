@@ -44,6 +44,8 @@ struct MovieDetails: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    static let test: MovieDetails = .init(adult: false, backdropPath: "", budget: 0, genres: [], homepage: "", id: 0, imdbID: "", originalLanguage: "", originalTitle: "", overview: "", popularity: 0, productionCompanies: [], productionCountries: [], releaseDate: "", revenue: 0, runtime: 0, spokenLanguages: [], status: "", tagline: "", title: "", video: false, voteAverage: 0, voteCount: 0)
 }
 
 // MARK: - Genre

@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let urlBase = "https://api.themoviedb.org/3"
+    static let getImagesUrlBase = "https://image.tmdb.org/t/p/original"
 }

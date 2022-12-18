@@ -26,6 +26,8 @@ struct MovieList: Codable {
         case name
         case posterPath = "poster_path"
     }
+    
+    static let test: MovieList = .init(createdBy: "", movieListDescription: "", favoriteCount: 0, id: "", items: [], itemCount: 0, iso639_1: "", name: "", posterPath: "")
 }
 
 // MARK: - Item
