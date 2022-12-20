@@ -12,21 +12,23 @@ protocol MainRouterProtocol {
 }
 
 final class MainRouter: MainRouterProtocol {
-    var viewController: UIViewController?
+    var navigationController: UINavigationController
     
-    static func assembled() -> UIViewController {
-        let router: MainRouterProtocol = MainRouter()
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func assembled() -> ViewController {
         let repository: MoviesRepositoryProtocol = MoviesRepository()
         let interactor: MainInteractorProtocol = MainInteractor(repository: repository)
-        var presenter: MainPresenterProtocol = MainPresenter(interactor: interactor, router: router)
+        var presenter: MainPresenterProtocol = MainPresenter(interactor: interactor, router: self)
         let viewController = ViewController(presenter: presenter)
-        presenter.view = viewController as? MainPresenterDelegate
-        let navigationController = UINavigationController(rootViewController: viewController)
-        return navigationController
+        presenter.view = viewController
+        return viewController
     }
     
     func navigateToDetails(_ id: Int) {
         let vc = DetailsViewController(id: id)
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
