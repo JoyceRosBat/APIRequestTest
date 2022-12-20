@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		397179632951A7E7004D09F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397179622951A7E7004D09F8 /* Coordinator.swift */; };
+		397179672951A88F004D09F8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397179662951A88F004D09F8 /* MainCoordinator.swift */; };
+		397179692951ABDD004D09F8 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397179682951ABDD004D09F8 /* Builder.swift */; };
+		3971796B2951ABEF004D09F8 /* MainViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971796A2951ABEF004D09F8 /* MainViewBuilder.swift */; };
+		39717971295226C4004D09F8 /* DetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39717970295226C4004D09F8 /* DetailsBuilder.swift */; };
 		39A08757294F8403006F2191 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A08756294F8403006F2191 /* DetailsViewController.swift */; };
 		39A08759294F84FE006F2191 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A08758294F84FE006F2191 /* DetailsView.swift */; };
 		39F71D90294F2C0800F00C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F71D8F294F2C0800F00C21 /* AppDelegate.swift */; };
@@ -32,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		397179622951A7E7004D09F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		397179662951A88F004D09F8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		397179682951ABDD004D09F8 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		3971796A2951ABEF004D09F8 /* MainViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewBuilder.swift; sourceTree = "<group>"; };
+		39717970295226C4004D09F8 /* DetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBuilder.swift; sourceTree = "<group>"; };
 		39A08756294F8403006F2191 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		39A08758294F84FE006F2191 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		39F71D8C294F2C0800F00C21 /* APIRequestTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIRequestTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +113,11 @@
 				39F71D98294F2C0A00F00C21 /* Assets.xcassets */,
 				39F71D9A294F2C0A00F00C21 /* LaunchScreen.storyboard */,
 				39F71D9D294F2C0A00F00C21 /* Info.plist */,
+				397179622951A7E7004D09F8 /* Coordinator.swift */,
+				397179662951A88F004D09F8 /* MainCoordinator.swift */,
+				397179682951ABDD004D09F8 /* Builder.swift */,
+				3971796A2951ABEF004D09F8 /* MainViewBuilder.swift */,
+				39717970295226C4004D09F8 /* DetailsBuilder.swift */,
 			);
 			path = APIRequestTest;
 			sourceTree = "<group>";
@@ -221,15 +236,20 @@
 				39F71DC3294F746300F00C21 /* MovieTableViewCell.swift in Sources */,
 				39A08759294F84FE006F2191 /* DetailsView.swift in Sources */,
 				39F71DC0294F69B200F00C21 /* UIView+Ext.swift in Sources */,
+				397179692951ABDD004D09F8 /* Builder.swift in Sources */,
 				39F71DB0294F358D00F00C21 /* MovieList.swift in Sources */,
 				39F71DC2294F6B7000F00C21 /* UIImageView+Ext.swift in Sources */,
 				39F71D94294F2C0800F00C21 /* ViewController.swift in Sources */,
 				39F71DB8294F370200F00C21 /* MoviesRequest.swift in Sources */,
+				39717971295226C4004D09F8 /* DetailsBuilder.swift in Sources */,
 				39F71DA4294F2D3000F00C21 /* NetworkError.swift in Sources */,
 				39F71DBA294F3A0400F00C21 /* MovieDetails.swift in Sources */,
+				3971796B2951ABEF004D09F8 /* MainViewBuilder.swift in Sources */,
 				39F71DB6294F369D00F00C21 /* MoviesRepository.swift in Sources */,
+				397179672951A88F004D09F8 /* MainCoordinator.swift in Sources */,
 				39F71DAD294F336F00F00C21 /* Requester.swift in Sources */,
 				39F71D90294F2C0800F00C21 /* AppDelegate.swift in Sources */,
+				397179632951A7E7004D09F8 /* Coordinator.swift in Sources */,
 				39A08757294F8403006F2191 /* DetailsViewController.swift in Sources */,
 				39F71DA7294F2E7100F00C21 /* APIRequest.swift in Sources */,
 				39F71DBC294F3F0D00F00C21 /* ResultResponse.swift in Sources */,

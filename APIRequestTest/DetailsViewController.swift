@@ -8,13 +8,13 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    
-    let id: Int
-    
     lazy var detailsView: DetailsView = {
         let view = DetailsView()
         return view
     }()
+    
+    let id: Int
+    weak var coordinator: Coordinator?
     
     init(id: Int) {
         self.id = id

@@ -21,10 +21,12 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    weak var coordinator: Coordinator?
     var data: [MovieView.Model] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.fill(with: tableView, edges: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
         
         let repository = MoviesRepository()
@@ -39,8 +41,8 @@ class ViewController: UIViewController {
                     originalTitle: item.originalTitle,
                     action: { [weak self] id in
                         guard let self = self else { return }
-                        let viewController = DetailsViewController(id: id)
-                        self.navigationController?.pushViewController(viewController, animated: true)
+                        let vc = DetailsBuilder(coordinator: coordinator, id: id)
+                        self.navigationController?.pushViewController(vc.build(), animated: true)
                     }
                 )
             }) ?? []
