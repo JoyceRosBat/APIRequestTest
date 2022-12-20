@@ -22,34 +22,22 @@ class ViewController: UIViewController {
     }()
     
     var data: [MovieView.Model] = []
+    var presenter: MainPresenterProtocol
+    
+    init(presenter: MainPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.fill(with: tableView, edges: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
-        
-        let repository = MoviesRepository()
-        
-        Task {
-            let movies = try? await repository.getMoviesList()
-            
-            data = movies?.items.compactMap({ item in
-                MovieView.Model(
-                    id: item.id,
-                    imagePath: item.posterPath,
-                    originalTitle: item.originalTitle,
-                    action: { [weak self] id in
-                        guard let self = self else { return }
-                        let viewController = DetailsViewController(id: id)
-                        self.navigationController?.pushViewController(viewController, animated: true)
-                    }
-                )
-            }) ?? []
-            
-            DispatchQueue.main.async { [weak self]  in
-                guard let self = self else { return }
-                self.tableView.reloadData()
-            }
-        }
+        presenter.viewDidLoad()
     }
 }
 
@@ -62,5 +50,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
         cell.configure(with: data[indexPath.row])
         return cell
+    }
+}
+
+extension ViewController: MainPresenterDelegate {
+    func moviesLoaded(_ movies: [MovieView.Model]) {
+        data = movies
+        DispatchQueue.main.async { [weak self]  in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
 }
